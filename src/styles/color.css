@@ -1,0 +1,46 @@
+
+body
+{
+    font-family: 'Roboto Light',serif;
+}
+
+* {margin: 0; padding: 0;}
+
+html, body 
+{
+    border:  0;
+	height:  100%;
+	margin:  0;
+	padding: 0;
+	width:   100%;
+    background-color:white;
+}
+
+#top-quote
+{
+    color:black;
+    font: 15px;
+    padding-top:20px;
+    text-align: center;
+}
+
+
+#main
+{
+    color: black;
+    font: 64px Roboto;
+    position: relative;
+
+    top: 45%;
+    margin-top: -80px;
+
+    text-align: center;
+}
+
+#time
+{
+    color: black;
+    font: 75px;
+}
+
+
