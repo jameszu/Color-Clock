@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 body
 {
     font-family: 'Roboto Light',serif;
@@ -18,7 +18,7 @@ html, body
 
 #top-quote
 {
-    color:black;
+    color:white;
     font: 15px;
     padding-top:20px;
     text-align: center;
@@ -27,8 +27,8 @@ html, body
 
 #main
 {
-    color: black;
-    font: 64px Roboto;
+    color: white;
+    font: 50px/50px Roboto Light;;
     position: relative;
 
     top: 45%;
@@ -39,8 +39,48 @@ html, body
 
 #time
 {
-    color: black;
-    font: 75px;
+    color: white;
+    font: 75px Roboto Light;
+    text-align: center;
+
 }
 
+#hexcolor
+{
+    color: white;
+    font: 20px Lato;
+
+    text-align: center;
+
+}
+
+#rgbcolor
+{
+    color: white;
+    font: 20px Lato;
+    text-align: center;
+
+}
+
+#hslcolor
+{
+    color: white;
+    font: 20px Lato;
+    text-align: center;
+
+}
+
+#footer
+{
+    color: white;
+    font: 20px;
+    text-align: center;
+
+}
+
+
+canvas {
+    height: 50%;
+    width: 50%;
+}
 
