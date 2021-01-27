@@ -5,6 +5,12 @@ function addZero(c)
     return num.length == 1 ? "0" + num : num;
 }
 
+function componentToHex(c) 
+{
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
 function timeToHex(h, m, s)
 {
     return "#" + addZero(h) + addZero(m) + addZero(s);
@@ -18,7 +24,12 @@ function HexToRgb(hex)
     let g = (bigint >> 8) & 255;
     let b = bigint & 255;
 
-    return "rgb(" + addZero(r) + ","+ addZero(g) + "," + addZero(b) + ")";
+    return "RGB(" + addZero(r) + ","+ addZero(g) + "," + addZero(b) + ")";
+}
+
+function rgbToHex(r, g, b) 
+{
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 function RgbToHsl(r, g, b)
@@ -65,7 +76,7 @@ function RgbToHsl(r, g, b)
     s = +(s * 100).toFixed(1);
     l = +(l * 100).toFixed(1);
 
-    return "hsl(" + addZero(h) + "," + addZero(s) + "%," + addZero(l) + "%)";
+    return "HSL(" + addZero(h) + "," + addZero(s) + "%," + addZero(l) + "%)";
 }
 
 function rgbToCmyk(r, g, b)
@@ -75,7 +86,7 @@ function rgbToCmyk(r, g, b)
     if (r == 0 && g == 0 && b == 0)
     {
         k = 1;
-        return "cmyk(" + addZero(c) + "," + addZero(m) + "," + addZero(y) + "," + addZero(k) + ")";
+        return "CMYK(" + addZero(c) + "," + addZero(m) + "," + addZero(y) + "," + addZero(k) + ")";
     }
     c = 1 - (r / 255);
     m = 1 - (g / 255);
@@ -91,13 +102,14 @@ function rgbToCmyk(r, g, b)
     m = +(m * 100).toFixed(0);
     y = +(y * 100).toFixed(0);
     k = +(k * 100).toFixed();
-    return "cmyk(" + addZero(c) + "," + addZero(m) + "," + addZero(y) + "," + addZero(k) + ")";
+    return "CMYK(" + addZero(c) + "," + addZero(m) + "," + addZero(y) + "," + addZero(k) + ")";
 }
 
 
 let date, hour, minute, second, colorTime;
 let red, green, blue;
 
+let r, g, b;
 function showTime()
 {
     date = new Date();
@@ -105,11 +117,11 @@ function showTime()
     minute = date.getMinutes();
     second = date.getSeconds();
     // console.log(hour, minute, second);
+
+    // First theme color
     hexcolor = timeToHex(hour, minute, second);
     document.body.style.background = hexcolor;
     rgbcolor = HexToRgb(hexcolor);
-
-
 
     let bigint = parseInt(hexcolor.substring(1), 16);
     red = (bigint >> 16) & 255;
@@ -122,23 +134,45 @@ function showTime()
 
     cmykTime = rgbToCmyk(red, green, blue);
 
-    document.getElementById("time").innerHTML = colorTime;
-    document.getElementById("hexcolor").innerHTML = hexcolor;
-    document.getElementById("rgbcolor").innerHTML = rgbcolor;
-    document.getElementById("hslcolor").innerHTML = hslTime;
-    document.getElementById("cmykcolor").innerHTML = cmykTime;
+    // Second theme
+    r = Math.round((hour * 255)/24);
+    g = Math.round((minute * 255)/60);
+    b = Math.round((second * 255)/60);
 
+    newColor = "RGB(" + r + "," + g + "," + b + ")";
+    HslTime = RgbToHsl(r, g, b);
+
+    CmykTime = rgbToCmyk(r, g, b);
+
+    HexTime = rgbToHex(r, g, b);
+
+
+    // HTML edits 
     const slide = document.getElementById("slider");
 
     const ele = document.getElementById("changeColor");
 
     if (ele.checked)
     {
+        document.getElementById("time").innerHTML = colorTime;
+        document.getElementById("hexcolor").innerHTML = HexTime;
+        document.getElementById("rgbcolor").innerHTML = newColor;
+        document.getElementById("hslcolor").innerHTML = HslTime;
+        document.getElementById("cmykcolor").innerHTML = CmykTime;
+
         slide.style.background = hexcolor;
+        document.body.style.background = newColor;
+
     }
     else
     {
-        slide.style.background = "red";
+        document.getElementById("time").innerHTML = colorTime;
+        document.getElementById("hexcolor").innerHTML = hexcolor;
+        document.getElementById("rgbcolor").innerHTML = rgbcolor;
+        document.getElementById("hslcolor").innerHTML = hslTime;
+        document.getElementById("cmykcolor").innerHTML = cmykTime;
+        slide.style.background = newColor;
+        document.body.style.background = hexcolor;
 
     }
 

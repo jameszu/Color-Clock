@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 body
 {
     font-family: 'Roboto',serif;
@@ -154,6 +154,8 @@ input:checked + #slider:before
 
 }
 
+
+
 #footer
 {
     color: white;
@@ -163,32 +165,3 @@ input:checked + #slider:before
 }
 
 
-canvas {
-    height: 50%;
-    width: 50%;
-}
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-#color-picker {
-    border: 3px solid rgba(15, 15, 15, 0.2);
-}
-  
-.info {
-width: 12em;
-display: flex;
-margin-left: 4em;
-flex-direction: row;
-justify-content: space-between;
-}
-
-.selected {
-width: 50px;
-height: 50px;
-border-radius: 100%;
-border: 2px solid rgba(15, 15, 15, 0.2);
-}
