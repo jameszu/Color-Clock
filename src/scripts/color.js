@@ -162,7 +162,7 @@ function showTime()
 
         slide.style.background = hexcolor;
         document.body.style.background = newColor;
-
+        // fadeIn(document.getElementById(), 3000);
     }
     else
     {
@@ -184,5 +184,24 @@ function showTime()
 showTime();
 
 
+
 // Toggle Button setting
 
+function fadeIn(el, time) 
+{
+    el.style.opacity = 0;
+  
+    var last = +new Date();
+    var tick = function() {
+      el.style.opacity = +el.style.opacity + (new Date() - last) / time;
+      last = +new Date();
+  
+      if (+el.style.opacity < 1) {
+        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+      }
+    };
+  
+    tick();
+}
+  
+var el = document.getElementById("div1");
