@@ -97,7 +97,7 @@ input:checked + #slider:before
 #top-quote
 {
     color:white;
-    font: 15px;
+    font: 15px/15px Roboto;
     padding-top:20px;
     text-align: center;
 }

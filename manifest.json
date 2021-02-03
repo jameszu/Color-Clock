@@ -2,11 +2,12 @@
     "chrome_url_overrides": {
        "newtab": "src/index.html"
     },
-    "description": "Color Clock",
+    "description": "It is a clock that change with color",
     
     "manifest_version": 2,
-    "name": "What Color is It",
+    "name": "Color Clock",
     "version": "0.1.1",
     "permissions": [ "clipboardWrite"],
     "content_security_policy": "object-src 'self'; script-src 'self' 'unsafe-eval'"
+    
  }
