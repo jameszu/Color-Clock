@@ -2,7 +2,7 @@
     "chrome_url_overrides": {
        "newtab": "src/index.html"
     },
-    "description": "It is a clock that change with color",
+    "description": "Discover a new color every second",
     
     "manifest_version": 2,
     "name": "Color Clock",
