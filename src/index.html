@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-        <title>What's the color now</title>
-        <link href="./styles/color.css" rel="stylesheet" type="text/css">
+    <title>What's the color now</title>
+    <link href="./styles/color.css" rel="stylesheet" type="text/css" />
+  </head>
 
-    </head>
+  <body>
+    <div id="top-quote">Hello there</div>
+    <div id="toggle">
+      <label id="switch">
+        <input id="changeColor" type="checkbox" />
+        <span id="slider"></span>
+      </label>
+    </div>
 
-    <body>
-        <div id="top-quote">Hello there</div>
-        <div id="toggle">
-            <label id="switch">
-                <input id="changeColor" type="checkbox">
-                <span id="slider"></span>
-            </label>
-        </div>
-        
-        <div id="main">
+    <div id="main">
+      <div id="time"></div>
+      <div id="hexcolor"></div>
+      <div id="rgbcolor"></div>
+      <div id="hslcolor"></div>
+      <div id="cmykcolor"></div>
+    </div>
+    <div id="footer"></div>
 
-            <div id="time"></div>
-            <div id="hexcolor"></div>
-            <div id="rgbcolor"></div>
-            <div id="hslcolor"></div>
-            <div id="cmykcolor"></div>
-        </div>
-        <div id="footer"></div>
+    <canvas width="300px" height="300px" id="color_canvas"></canvas>
+    <div class="info">
+      <h3>Selected Color</h3>
+      <div class="selected">
+        <input type="color" id="head" name="head" value="#e66465" />
+      </div>
+    </div>
 
-
-
-
-        <!-- <canvas id="color-picker"></canvas>
-        <div class="info">
-            <h3>Selected Color</h3> 
-            <div class="selected"></div>
-        </div> -->
-
-        <script src="./scripts/color.js" type="application/javascript"></script>
-    </body>
-
+    <script src="./scripts/color.js" type="application/javascript"></script>
+    <script
+      src="./scripts/colorCanvas.js"
+      type="application/javascript"
+    ></script>
+  </body>
 </html>
