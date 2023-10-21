@@ -1,13 +1,11 @@
 {
-    "chrome_url_overrides": {
-       "newtab": "src/index.html"
-    },
-    "description": "Discover a new color every second",
-    
-    "manifest_version": 2,
-    "name": "Color Clock",
-    "version": "0.1.1",
-    "permissions": [ "clipboardWrite"],
-    "content_security_policy": "object-src 'self'; script-src 'self' 'unsafe-eval'"
-    
- }
+  "chrome_url_overrides": {
+    "newtab": "src/index.html"
+  },
+  "description": "Discover a new color every second",
+
+  "manifest_version": 2,
+  "name": "Color Clock",
+  "version": "0.1.2",
+  "content_security_policy": "object-src 'self'; script-src 'self' 'unsafe-eval'"
+}
